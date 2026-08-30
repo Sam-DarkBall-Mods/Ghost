@@ -2,26 +2,27 @@
 
 [![CI](https://github.com/Sam-DarkBall-Mods/Ghost/actions/workflows/ci.yml/badge.svg)](https://github.com/Sam-DarkBall-Mods/Ghost/actions/workflows/ci.yml)
 
-Ghost unmanned aircraft systems for Arma 3.
+Ghost adds a small fixed wing UAV for BLUFOR, OPFOR and Independent. The three
+variants share the same aircraft and differ by side. There is also a small
+sound script that occasionally plays crew audio while the UAV engine is
+running.
 
 ## Requirements
 
 - Arma 3 2.22 or newer
-- Additional runtime dependencies declared by `CfgPatches`
 
-## Development
+## Building
 
 ```bash
+python3 -B -m unittest discover -s tests -p "test_*.py" -v
 hemtt check
 hemtt build --no-bin
-python3 -B -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-Legacy `CfgPatches`, function names, virtual PBO prefixes, and release PBO
-filenames are compatibility contracts and must not change in a patch release.
+The `ghost` PBO prefix and existing vehicle class names are part of the mod's
+public interface and are not renamed in patch releases.
 
 ## License
 
-SQF, Arma configuration, and tooling are GPL-2.0-or-later. Original Arma
-models, textures, materials, animations, and audio are APL-SA. See
-[LICENSES.md](LICENSES.md) and closer notices.
+Code and configs use GPL-2.0-or-later. The aircraft assets and audio use APL-SA.
+See [LICENSES.md](LICENSES.md).
