@@ -1,4 +1,9 @@
 name = "Ghost 1.0.0";
+picture = "128.paa";
+logo = "128.paa";
+logoOver = "128.paa";
+logoSmall = "64.paa";
+overviewPicture = "128.paa";
 actionName = "GitHub";
 action = "https://github.com/Sam-DarkBall-Mods/Ghost";
 description = "Ghost - Version 1.0.0";
