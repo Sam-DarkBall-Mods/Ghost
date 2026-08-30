@@ -9,14 +9,16 @@ class CfgPatches {
 		
 		units[]	= 
 		{
-		"ghost_M"
+			"ghost_M_OPF",
+			"ghost_M_BLU_F",
+			"ghost_M_IND_F"
 		};
 		weapons[] =  
 		{
 		
 		};
 		
-		requiredVersion = 0.1;
+		requiredVersion = 2.22;
 		requiredAddons[] = {"A3_Air_F", "A3_Characters_F_Gamma"};
 		
 	};
@@ -126,7 +128,7 @@ class CfgVehicles {
 		ejectSpeed[] = {0, 0, 0};
 		armor = 15;
 		damageResistance = 0.0001;
-		destrType = DestructWreck;	
+		destrType = "DestructWreck";
 		irScanRangeMin = 50;		
 		irScanRangeMax = 5000;		
 		irScanToEyeFactor = 2;	
@@ -164,25 +166,25 @@ class CfgVehicles {
 		
 		
 			class EngineLowIn {
-				sound[] = {"\ghost\data\fly.wss", db0, 1.0};
+				sound[] = {"\ghost\data\fly.wss", 1, 1.0};
 				frequency = "1.0 min (rpm + 0.5)";
 				volume = "(1-camPos)*(rpm factor[0.95, 0])*(rpm factor[0, 0.95])";
 			};
 			
 			class EngineLowOut {
-				sound[] = {"\ghost\data\fly.wss", db-3, 1.0, 450};
+				sound[] = {"\ghost\data\fly.wss", 0.707946, 1.0, 450};
 				frequency = "1.0 min (rpm + 0.5)";
 				volume = "camPos*(rpm factor[0.95, 0])*(rpm factor[0, 0.95])";
 			};
 			
 			class EngineHighIn {
-				sound[] = {"\ghost\data\fly.wss", db0, 1.0};
+				sound[] = {"\ghost\data\fly.wss", 1, 1.0};
 				frequency = "(0.1+(1.005*(speed factor[1, 50])))";
 				volume = "(1-camPos)*(rpm factor[0.2, 1.0])";
 			};
 			
 			class EngineHighOut {
-				sound[] = {"\ghost\data\fly.wss", db0, 1.0, 650};
+				sound[] = {"\ghost\data\fly.wss", 1, 1.0, 650};
 				frequency = "(0.1+(1.005*(speed factor[1, 50])))";
 				volume = "camPos*(rpm factor[0.2, 1.0])";
 			};
@@ -194,20 +196,20 @@ class CfgVehicles {
 			};
 			
 			class ForsageOut {
-				sound[] = {"A3\Sounds_F\air\UAV_02\UAV_02_forsage_ext", db1, 1.0, 900};
+				sound[] = {"A3\Sounds_F\air\UAV_02\UAV_02_forsage_ext", 1.12202, 1.0, 900};
 				frequency = "1";
 				volume = "engineOn*camPos*(thrust factor[0.6, 1.0])";
 				cone[] = {3.14, 3.92, 2.0, 0.5};
 			};
 			
 			class WindNoiseIn {
-				sound[] = {"A3\Sounds_F\air\UAV_02\noise", db-12, 1.0};
+				sound[] = {"A3\Sounds_F\air\UAV_02\noise", 0.251189, 1.0};
 				frequency = "(0.3+(1.005*(speed factor[1, 50])))";
 				volume = "(1-camPos)*(speed factor[1, 50])";
 			};	
 			
 			class WindNoiseOut {
-				sound[] = {"A3\Sounds_F\air\UAV_02\noise", db -10, 1.0, 150};
+				sound[] = {"A3\Sounds_F\air\UAV_02\noise", 0.316228, 1.0, 150};
 				frequency = "(0.3+(1.005*(speed factor[1, 50])))";
 				volume = "camPos*(speed factor[1,  50])";
 			};
